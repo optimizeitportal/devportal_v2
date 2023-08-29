@@ -6,9 +6,9 @@
 
 @section('css')
     <!-- owl.carousel css -->
-    <link rel="stylesheet" href="{{ URL::asset('build/libs/owl.carousel/assets/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('build/libs/owl.carousel/assets/owl.theme.default.min.css') }}">
-    <link href="{{ URL::asset('build/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('build/libs/owl.carousel/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/libs/owl.carousel/assets/owl.theme.default.min.css') }}">
+    <link href="{{ asset('build/libs/bootstrap-datepicker/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 @section('body')
@@ -90,9 +90,9 @@
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5">
                                         <a href="index" class="d-block auth-logo">
-                                            <img src="{{ URL::asset('images/optimizeit-web-logo.png') }}" alt="" height="45"
+                                            <img src="{{ asset('images/optimizeit-web-logo.png') }}" alt="" height="45"
                                                 class="auth-logo-dark">
-                                            <img src="{{ URL::asset('images/optimizeit-logo-white.png') }}" alt="" height="45"
+                                            <img src="{{ asset('images/optimizeit-logo-white.png') }}" alt="" height="45"
                                                 class="auth-logo-light">
                                         </a>
                                     </div>
@@ -195,9 +195,9 @@
 
     @endsection
     @section('script')
-        <script src="{{ URL::asset('build/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
+        <script src="{{ asset('build/libs/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
         <!-- owl.carousel js -->
-        <script src="{{ URL::asset('build/libs/owl.carousel/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('build/libs/owl.carousel/owl.carousel.min.js') }}"></script>
         <!-- auth-2-carousel init -->
-        <script src="{{ URL::asset('build/js/pages/auth-2-carousel.init.js') }}"></script>
+        <script src="{{ asset('build/js/pages/auth-2-carousel.init.js') }}"></script>
     @endsection
