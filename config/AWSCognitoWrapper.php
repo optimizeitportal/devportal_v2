@@ -61,7 +61,7 @@ class AWSCognitoWrapper
                     'PASSWORD' => $password,
                 ],
             ]);
-           
+
         } catch (\Exception$e) {
             return $e->getAwsErrorMessage(); //error message
         }

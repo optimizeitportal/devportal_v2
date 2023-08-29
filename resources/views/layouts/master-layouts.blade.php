@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="dark">
 
 <head>
     <meta charset="utf-8" />
@@ -13,7 +13,7 @@
 </head>
 
 @section('body')
-    <body data-topbar="dark" data-layout="horizontal">
+    <body data-topbar="dark" data-layout="horizontal" data-bs-theme="dark" >
 @show
 
     <!-- Begin page -->

@@ -22,20 +22,20 @@ class DashbordController extends Controller
 
         // save the document metrics data in session
         session()->put('doc_metrics', $doc_metrics);
-       
+
         return view('dashboard',compact('documents','uploaded_list','doc_metrics'));
-       
+
     }
 
 
     /**
-     * 
+     *
      * Function : get_uploadedList_component()
      * Purpose  : For auto Reload the uploaded Files data in dashboard page every 5 sec.
      * Return   : view('components.documents.uploade_list') or noData
-     * 
+     *
      * Ajax Request
-     * 
+     *
      */
     public function get_uploadedList_component()
     {
@@ -43,7 +43,7 @@ class DashbordController extends Controller
         $uploaded_data = API_repository::getUploadedList(); // Load User Uploaded Documents List.
         $uploaded_list = $this->get_uploadList_tableFormat($uploaded_data); // Load User Uploaded Documents in the dashbord Table
         $doc_metrics = $this->get_doc_metrics($uploaded_list); // Load Document Metrics in dashbord
-        $temp_doc_metrics =session('doc_metrics'); 
+        $temp_doc_metrics =session('doc_metrics');
         $is_changed = false;
 
         // Check the doc_metrics session data and fetched data is same or not.
@@ -63,20 +63,20 @@ class DashbordController extends Controller
     }
 
     /**
-     * 
+     *
      * Function : get_uploadList_tableFormat($uploaded_data)
      * Param    : $uploaded_data
      * Purpose  : Converting the Uploaded Document list into the Table required Format
      * Return   : array
-     * 
+     *
      */
     public function get_uploadList_tableFormat($uploaded_data , $filter=false) {
 
         $uploaded_list=[];
         foreach($uploaded_data as $k=> $list_val){
 
-            $files = str_replace(session('account_id') . '/uploaded_files/', '', $list_val); 
-            // Format the document display name without the account id and date stamp.  
+            $files = str_replace(session('account_id') . '/uploaded_files/', '', $list_val);
+            // Format the document display name without the account id and date stamp.
             $file = explode('_', $files); // convert string to array
             //remove first 2 index
             unset($file[0]);
@@ -116,12 +116,12 @@ class DashbordController extends Controller
     }
 
     /**
-     * 
+     *
      * Function : get_uploadList_tableFormat($uploaded_data)
      * Param    : $uploaded_data
      * Purpose  : Filtering the Uploaded list Document for required document Metrics
      * Return   : array
-     * 
+     *
      */
     public function get_doc_metrics($uploaded_list) {
         // Load document Metrics
@@ -129,27 +129,27 @@ class DashbordController extends Controller
             'doc_count'=>count($uploaded_list),
             'processed'=>count(array_filter($uploaded_list,function($var){  // For processed
                 $i = 0;
-                if($var['status'] == 'PROCESSED'){  //Filter the PROCESSED data 
+                if($var['status'] == 'PROCESSED'){  //Filter the PROCESSED data
                     $i++;
                 }
                 return $i;
             })),
             'extracted'=>count(array_filter($uploaded_list,function($var){  //For extracted
                 $i = 0;
-                if($var['status'] == 'PROCESSED'){ //Filter the PROCESSED data 
+                if($var['status'] == 'PROCESSED'){ //Filter the PROCESSED data
                     $i++;
                 }
                 return $i;
             })),
             'Uploaded'=>count(array_filter($uploaded_list,function($var){  //For Uploaded
                 $i = 0;
-                if($var['status'] == 'UPLOADED'){ //Filter the UPLOADED data 
+                if($var['status'] == 'UPLOADED'){ //Filter the UPLOADED data
                     $i++;
                 }
                 return $i;
             })),
         ];
-            
+
         return $doc_metrics;
     }
 }

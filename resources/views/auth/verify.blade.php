@@ -12,7 +12,7 @@
 
 @section('body')
 
-    <body class="auth-body-bg">
+    <body class="auth-body-bg" data-bs-theme="dark">
     @endsection
 
     @section('content')

@@ -6,7 +6,7 @@
 
 @section('body')
 
-    <body>
+    <body data-bs-theme="dark">
     @endsection
 
     @section('content')
