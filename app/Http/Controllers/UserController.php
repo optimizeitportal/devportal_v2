@@ -3,26 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\ApiModels\API_repository;
-use config\AWSCognitoWrapper as AWS;
+use App\ApiModels\AWSCognitoWrapper as AWS;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    
+
     /**
-     * 
+     *
      * Function : login()
      * Param    : Request $request
      * Purpose  : validate login information and navigate to dashboard if valid
      * Return   : if valid go to dashboard or show errors.
-     * 
+     *
      */
     public function login(Request $request)
     {
         $validated = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-        ]); //validation 
+        ]); //validation
 
         $error = AWS::authenticate($request->email, $request->password); // To check login credentials and login
         if (empty($error)) {
@@ -45,16 +45,16 @@ class UserController extends Controller
 
 
     /**
-     * 
+     *
      * Function : register()
      * Param    : Request $request
      * Purpose  : To validate business email and signup the user.
      * Return   : if valid go to conformation or show errors;
-     * 
+     *
      */
     public function register(Request $request)
     {
-        // validation 
+        // validation
         $validated = $request->validate([
             'username' => 'required',
             'email' => 'required|email',
@@ -65,7 +65,7 @@ class UserController extends Controller
         $spem = @explode("@", $request->email);
         $dotsp = @explode(".", $spem[1]);
         $emsp = strtolower($dotsp[0]);
-        
+
         // Check Business Eamil
         if (in_array($emsp, $arrayval)) {
             $emailerr = "A valid business email is required to sign-up.";
@@ -84,12 +84,12 @@ class UserController extends Controller
     }
 
     /**
-     * 
+     *
      * Function : confirmation()
      * Param    : Request $request
      * Purpose  : To Check the conformation code for signup.
      * Return   : if valid go to dashboard or show errors;
-     * 
+     *
      */
     public function confirmation(Request $request)
     {
@@ -109,19 +109,19 @@ class UserController extends Controller
         }
         return back()->withErrors(['error' => $error]);
     }
-    
+
     /**
-     * 
+     *
      * Function : confirmation()
      * Param    : Request $request
      * Purpose  : Send conformation code to mail for forgot password .
      * Return   : if valid go to forgot conformation page or show errors;
-     * 
+     *
      */
     public function forgot_password_code(Request $request)
     {
         // Send conformation Code to Mail
-        $error = AWS::sendPasswordResetMail($request->get('email')); 
+        $error = AWS::sendPasswordResetMail($request->get('email'));
         if (empty($error)) {
             return redirect('/forgotpassword?email='.$request->get('email'))->with('enter_code',1);
         }
@@ -129,12 +129,12 @@ class UserController extends Controller
     }
 
     /**
-     * 
+     *
      * Function : password_code_verify()
      * Param    : Request $request
      * Purpose  : To check the conformation for forgot password .
      * Return   : if valid go to dashboard or show errors;
-     * 
+     *
      */
     public function password_code_verify(Request $request)
     {
@@ -151,12 +151,12 @@ class UserController extends Controller
     }
 
     /**
-     * 
+     *
      * Function : logout()
      * Param    : Request $request
      * Purpose  : For Logout.
      * Return   : go to Login page;
-     * 
+     *
      */
     public function logout()
     {

@@ -1,5 +1,5 @@
 <?php
-namespace config;
+namespace App\ApiModels;
 use Aws\CognitoIdentityProvider\CognitoIdentityProviderClient;
 
 class AWSCognitoWrapper
