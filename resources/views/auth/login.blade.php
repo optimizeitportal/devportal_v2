@@ -87,7 +87,7 @@
                                 <div class="mb-4 mb-md-5">
                                     <a href="{{url('/')}}" class="d-block auth-logo">
                                         <img src="{{ URL::asset('images/optimizeit-web-logo.png') }}" alt="" height="45" class="auth-logo-dark">
-                                        <img src="{{ URL::asset('images/optimizeit-web-logo.png') }}" alt="" height="45" class="auth-logo-light">
+                                        <img src="{{ URL::asset('images/optimizeit-logo-white.png') }}" alt="" height="45" class="auth-logo-light">
                                     </a>
                                 </div>
                                 <div class="my-auto">

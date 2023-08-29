@@ -17,7 +17,7 @@
                         <img src="{{ URL::asset('images/favicon.ico') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ URL::asset('images/optimizeit-web-logo.png') }}" alt="" height="19">
+                        <img src="{{ URL::asset('images/optimizeit-logo-white.png') }}" alt="" height="19">
                     </span>
                 </a>
             </div>

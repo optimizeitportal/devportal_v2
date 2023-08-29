@@ -26,23 +26,7 @@
                         <div class="">
                             <label for="" class="opt-p mb-2">
                                 <b>Sample Document</b>
-                                <span class="help_info" data-tooltip-text="test">
-                                    <i class="fa fa-info"></i>
-                                    <span class="tool-text">
-                                        <ul>
-                                            <li>These are the documents already trained and have full array of
-                                                functions including key insights.</li>
-                                            <li>When you select any of them, you can see the extracted sample
-                                                data.</li>
-                                            <li>When you upload your own documents of the same kind, you will
-                                                get the same kind of outputs in less than 60 seconds.</li>
-                                            <li>Documents that not in our library already, will be classified as
-                                                ‘Other’.</li>
-                                            <li>Our team continuously updates the document list, please send us
-                                                your requests to add any new document.</li>
-                                        </ul>
-                                    </span>
-                                </span>
+                                
                             </label>
                             <select id="docTypes_select" class="form-control opt-p" name=""
                                 style="padding: 10px;">
@@ -55,7 +39,7 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="uploaded_list_cont">
                         <span class="doc_prev"><i class="fa fa-angle-left"></i></span>
                         <div class="uploaded_select_box">
@@ -84,18 +68,7 @@
 
                     <div class=" m-0 doc_info_cont" style="position: relative;">
                         <strong style="font-size: 14px;">Document Name
-                            <span class="help_info" data-tooltip-text="test" style="vertical-align: middle;">
-                                <i class="fa fa-info"></i>
-                                <span class="tool-text">
-                                    <ul>
-                                        <li>This is the document classification(id)</li>
-                                        <li>If the value is ‘Other’, it means this document is not in our
-                                            library.</li>
-                                        <li>You can tell our team to on-board the document by clicking
-                                            “On-Board” button next to the classification.</li>
-                                    </ul>
-                                </span>
-                            </span> : </strong>
+                            
                         <span class="doc_name" style="font-size: 14px"></span>
                         <div class="doc_details" style="display: none;">
                             <strong style="font-size: 14px;">Domain :</strong>
@@ -147,15 +120,7 @@
                 <button class="nav-link active" id="raw_textTab" data-bs-toggle="tab"
                     data-bs-target="#tab-4-1" type="button" role="tab" aria-controls="tab-4-1"
                     data-result-id=".rawText" data-url="get_rawtext" aria-selected="true">Raw Text
-                    <span class="help_info" data-tooltip-text="test">
-                        <i class="fa fa-info"></i>
-                        <span class="tool-text">
-                            <ul>
-                                <li>Every text in your documents are extracted and shown here</li>
-                                <li>The data is segregated by page</li>
-                            </ul>
-                        </span>
-                    </span>
+                    
                 </button>
             </li>
             <li class="nav-item" role="presentation">
@@ -163,50 +128,21 @@
                     type="button" role="tab" aria-controls="tab-4-2" data-result-id=".formData"
                     data-url="get_formdata" data-form-id="#formsData" aria-selected="false"
                     data-form-submit="1">Forms
-                    <span class="help_info" data-tooltip-text="test">
-                        <i class="fa fa-info"></i>
-                        <span class="tool-text">
-                            <ul>
-                                <li>The key and value pairs from the documents are displayed here.</li>
-                                <li>The data is sequenced as they appear on the document.</li>
-                                <li>For the documents from our library – label transformation is built in to
-                                    provide specific information.</li>
-                                <li>Selecting any element will highlight the corresponding data on the form
-                                    image on the left side.</li>
-                            </ul>
-                        </span>
-                    </span>
+                    
                 </button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="tableTab" data-bs-toggle="tab" data-bs-target="#tab-4-3"
                     type="button" role="tab" aria-controls="tab-4-3" data-result-id=".tableData"
                     data-url="get_tabledata" data-form-id="#tableData" aria-selected="false">Tables
-                    <span class="help_info" data-tooltip-text="test">
-                        <i class="fa fa-info"></i>
-                        <span class="tool-text right">
-                            <ul>
-                                <li>The data in table formats within the documents are displayed here.</li>
-                                <li>Selecting any element will highlight the corresponding data on the form
-                                    image on the left side.</li>
-                            </ul>
-                        </span>
-                    </span>
+                    
                 </button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="reportTab" data-bs-toggle="tab" data-bs-target="#tab-4-4"
                     type="button" role="tab" aria-controls="tab-4-4" data-result-id=".reportData"
                     data-url="get_reports" aria-selected="false">Key Insights
-                    <span class="help_info" data-tooltip-text="test">
-                        <i class="fa fa-info"></i>
-                        <span class="tool-text right">
-                            <ul>
-                                <li>This is applicable to the documents available in our library.</li>
-                                <li>Personalized insights will be provided as per customer requirements</li>
-                            </ul>
-                        </span>
-                    </span>
+                    
                 </button>
             </li>
         </ul>
