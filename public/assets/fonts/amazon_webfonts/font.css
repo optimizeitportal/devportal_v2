@@ -1,0 +1,257 @@
+/* Bold */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_Bd.eot');
+  src: url('./webfonts/AmazonEmber_W_Bd.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_Bd.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_Bd.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_Bdit.eot');
+  src: url('./webfonts/AmazonEmber_W_Bdit.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_Bdlt.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_Bdlt.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_Lt.eot');
+  src: url('./webfonts/AmazonEmber_W_Lt.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_Lt.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_Lt.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Light Italic */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_Ltit.eot');
+  src: url('./webfonts/AmazonEmber_W_Ltit.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_Ltit.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_Ltit.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_Rg.eot');
+  src: url('./webfonts/AmazonEmber_W_Rg.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_Rg.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_Rg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Regular Italic */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_Rgit.eot');
+  src: url('./webfonts/AmazonEmber_W_Rgit.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_Rglt.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_Rglt.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Thin */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_Th.eot');
+  src: url('./webfonts/AmazonEmber_W_Th.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_Th.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_Th.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Thin Italic */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_Thit.eot');
+  src: url('./webfonts/AmazonEmber_W_Thit.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_Thit.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_Thit.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Heavy Italic */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_Helt.eot');
+  src: url('./webfonts/AmazonEmber_W_Helt.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_Helt.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_Helt.woff') format('woff');
+  /* The font-weight value for Heavy Italic is not standard; adjust as needed. */
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Semi-Bold */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_SBd.eot');
+  src: url('./webfonts/AmazonEmber_W_SBd.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_SBd.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_SBd.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Semi-Bold Italic */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: url('./webfonts/AmazonEmber_W_SBdit.eot');
+  src: url('./webfonts/AmazonEmber_W_SBdit.eot?#iefix') format('embedded-opentype'),
+       url('./webfonts/AmazonEmber_W_SBdlt.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_SBdlt.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+  
+  /* Add more font-face rules for other font weights and styles as needed */
+  
+  /* cyrillic-ext, cyrillic, latin-ext, latin */
+  @font-face {
+    font-family: 'BookerlyDisplay';
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url(./webfonts/BookerlyDisplay_W_Bd.woff2) format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'BookerlyDisplay';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./webfonts/BookerlyDisplay_W_Rg.woff2) format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'BookerlyDisplay';
+    font-style: italic;
+    font-weight: bold;
+    font-display: swap;
+    src: url(./webfonts/BookerlyDisplay_W_Bdit.woff2) format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'BookerlyDisplay';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./webfonts/BookerlyDisplay_W_It.woff2) format('woff2');
+  }
+  
+  /* cyrillic-ext, cyrillic, latin-ext, latin */
+  @font-face {
+    font-family: 'BookerlyLCD';
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url(./webfonts/BookerlyLCD_W_Bd.woff2) format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'BookerlyLCD';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./webfonts/BookerlyLCD_W_Rg.woff2) format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'BookerlyLCD';
+    font-style: italic;
+    font-weight: bold;
+    font-display: swap;
+    src: url(./webfonts/BookerlyLCD_W_Bdit.woff2) format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'BookerlyLCD';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./webfonts/BookerlyLCD_W_It.woff2) format('woff2');
+  }
+  
+
+
+  /* Helvetica Neue Light */
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(./Helvetica_Neue/HelveticaNeueLTW0697BlkCnObl.woff2) format('woff2');
+}
+
+/* Helvetica Neue Medium Extended */
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./Helvetica_Neue/HelveticaNeueMediumExtended.woff2) format('woff2');
+}
+
+/* Helvetica Neue UltraLight */
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(./Helvetica_Neue/HelveticaNeueUltraLight.woff2) format('woff2');
+}
+
+/* Helvetica Neue Medium Italic */
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./Helvetica_Neue/HelveticaNeueW0166MediumIt.woff2) format('woff2');
+}
+
+/* Helvetica Neue Bold Condensed Obl. */
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url(./Helvetica_Neue/HelveticaNeueW0177BdCnObl.woff2) format('woff2');
+}
+
+/* Helvetica Neue Heavy Condensed Obl. */
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(./Helvetica_Neue/HelveticaNeueW0187HvCnObl.woff2) format('woff2');
+}
+
+/* Helvetica Neue Light Extended Obl. */
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(./Helvetica_Neue/HelveticaNeueLTW0693BIkExtObl.woff2) format('woff2');
+}
+  /* Add more font-face rules for other font weights and styles as needed */
+  
