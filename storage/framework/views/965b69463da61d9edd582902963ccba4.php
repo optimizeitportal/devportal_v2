@@ -1,17 +1,17 @@
 <?php $__env->startSection('title'); ?>
-    <?php echo app('translator')->get('translation.Register'); ?> 2
+    <?php echo app('translator')->get('translation.Register'); ?>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('css'); ?>
     <!-- owl.carousel css -->
-    <link rel="stylesheet" href="<?php echo e(URL::asset('build/libs/owl.carousel/assets/owl.carousel.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(URL::asset('build/libs/owl.carousel/assets/owl.theme.default.min.css')); ?>">
-    <link href="<?php echo e(URL::asset('build/libs/bootstrap-datepicker/bootstrap-datepicker.min.css')); ?>" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('build/libs/owl.carousel/assets/owl.carousel.min.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('build/libs/owl.carousel/assets/owl.theme.default.min.css')); ?>">
+    
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('body'); ?>
 
-    <body class="auth-body-bg" data-bs-theme="dark">
+    <body class="auth-body-bg" >
     <?php $__env->stopSection(); ?>
 
     <?php $__env->startSection('content'); ?>
@@ -86,19 +86,19 @@
                             <div class="w-100">
 
                                 <div class="d-flex flex-column h-100">
-                                    <div class="mb-4 mb-md-5">
-                                        <a href="index" class="d-block auth-logo">
-                                            <img src="<?php echo e(URL::asset('images/optimizeit-web-logo.png')); ?>" alt="" height="45"
-                                                class="auth-logo-dark">
-                                            <img src="<?php echo e(URL::asset('images/optimizeit-logo-white.png')); ?>" alt="" height="45"
-                                                class="auth-logo-light">
-                                        </a>
-                                    </div>
+                                    
                                     <div class="my-auto">
-
-                                        <div>
-                                            <h5 class="text-primary">Register account</h5>
-                                            <p class="text-muted">Get your free Optimize it account now.</p>
+                                        <div class="mb-4 mb-md-5 auth-logo-box">
+                                            <a href="<?php echo e(url('/')); ?>" class="d-block auth-logo ">
+                                                <img src="<?php echo e(asset('images/optimizeit-web-logo.png')); ?>" alt="" height="45" class="auth-logo-dark">
+                                                <img src="<?php echo e(asset('images/optimizeit-web-logo.png')); ?>" alt="" height="45" class="auth-logo-light">
+                                            </a>
+                                        </div>
+                                        <div class="row flex-between-center mt-2">
+                                            <div class="col-12">
+                                                <h3>Signup</h3>
+                                            </div>
+                                            <div class="col-12 fs--1 text-600"><span class="mb-0 fw-semi-bold">Have an account?</span> <span><a class="lglink" href="<?php echo e(url('/')); ?>">Login</a></span></div>
                                         </div>
 
                                         <div class="mt-4">
@@ -182,33 +182,49 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                                 </div>
 
-                                                <div class="mb-3">
-                                                    <label for="confirmpassword" class="form-label">Confirm Password <span class="text-danger">*</span></label>
-                                                    <input type="password" class="form-control <?php $__errorArgs = ['password_confirmation'];
+                                                <div id="message" style="display: none">
+                                                    <p id="letter" class="invalid">Password must contain a lower case letter</p>
+                                                    <p id="capital" class="invalid">Password must contain an upper case letter</p>
+                                                    <p id="special" class="invalid">Password must contain a special character</p>
+                                                    <p id="number" class="invalid">Password must contain a number</p>
+                                                    <p id="length" class="invalid">Password must contain at least 8 characters</p>
+                                                  </div>
+                                                  <?php $__errorArgs = ['email_error'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+$message = $__bag->first($__errorArgs[0]); ?><p class="text-danger alertmsg" id="emailerr"><?php echo $message; ?></p> <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" id="confirmpassword"
-                                                    name="password_confirmation" placeholder="Enter Confirm password" autofocus required>
-                                                    <?php $__errorArgs = ['password_confirmation'];
+unset($__errorArgs, $__bag); ?>
+                                                  <?php $__errorArgs = ['error'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong><?php echo e($message); ?></strong>
-                                                        </span>
-                                                    <?php unset($message);
+                                                     <p class="text-danger alertmsg" id="emailerr"><?php echo e($message); ?>
+
+                                                         <?php if($message=='An account with the given email already exists.'): ?>
+                                                         <a href="<?php echo e(url('/')); ?>" class="lglink">Please Login</a>
+                                                         <?php endif; ?>
+                                                     </p>
+                                                   <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                                </div>
+                                                  <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><p class="text-danger alertmsg" id="emailerr"><?php echo e($message); ?></p> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
 
 
                                                 <div class="mt-4 d-grid">
+                                                    <input type="hidden" id="otpcheck" value="">
+                                                    <input type='hidden' name='action' value='register' />
                                                     <button class="btn btn-primary waves-effect waves-light"
                                                         type="submit">Register</button>
                                                 </div>
@@ -217,10 +233,6 @@ unset($__errorArgs, $__bag); ?>
                                                 
                                             </form>
 
-                                            <div class="mt-3 text-center">
-                                                <p>Already have an account ? <a href="<?php echo e(url('/')); ?>"
-                                                        class="fw-medium text-primary"> Login</a> </p>
-                                            </div>
 
                                         </div>
                                     </div>
@@ -246,11 +258,90 @@ unset($__errorArgs, $__bag); ?>
 
     <?php $__env->stopSection(); ?>
     <?php $__env->startSection('script'); ?>
-        <script src="<?php echo e(URL::asset('build/libs/bootstrap-datepicker/bootstrap-datepicker.min.js')); ?>"></script>
+        
         <!-- owl.carousel js -->
-        <script src="<?php echo e(URL::asset('build/libs/owl.carousel/owl.carousel.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('build/libs/owl.carousel/owl.carousel.min.js')); ?>"></script>
         <!-- auth-2-carousel init -->
-        <script src="<?php echo e(URL::asset('build/js/pages/auth-2-carousel.init.js')); ?>"></script>
+        <script src="<?php echo e(asset('build/js/pages/auth-2-carousel.init.js')); ?>"></script>
+        <script>document.documentElement.setAttribute("data-bs-theme", "light");</script>
+        <script>
+            var myEmail = document.getElementById("useremail");
+            var myInput = document.getElementById("userpassword");
+            var letter = document.getElementById("letter");
+            var capital = document.getElementById("capital");
+            var special = document.getElementById("special");
+            var number = document.getElementById("number");
+            var length = document.getElementById("length");
+        
+            myEmail.onfocus = function() {
+            document.getElementById("cagerr").style.display = "none";
+            }
+            myEmail.onkeyup = function() {
+            document.getElementById("emailerr").style.display = "none";
+            }
+        
+            // When the user clicks on the password field, show the message box
+            myInput.onfocus = function() {
+            document.getElementById("message").style.display = "block";
+            }
+        
+            // When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function() {
+            document.getElementById("message").style.display = "block";
+            }
+        
+            // When the user starts to type something inside the password field
+            myInput.onkeyup = function() {
+            // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/g;
+            if(myInput.value.match(lowerCaseLetters)) {
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+            } else {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+            }
+        
+            // Validate capital letters
+            var upperCaseLetters = /[A-Z]/g;
+            if(myInput.value.match(upperCaseLetters)) {
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+            } else {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+            }
+        
+            var specialchar = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/g;
+            if(myInput.value.match(specialchar)) {
+                special.classList.remove("invalid");
+                special.classList.add("valid");
+            } else {
+                special.classList.remove("valid");
+                special.classList.add("invalid");
+            }
+        
+            // Validate numbers
+            var numbers = /[0-9]/g;
+            if(myInput.value.match(numbers)) {
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+            } else {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+            }
+        
+            // Validate length
+            if(myInput.value.length >= 8) {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+            } else {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+            }
+            }
+           
+        </script>
     <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Laravel_projects\devportel\devportal_v2\resources\views/auth/register.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/digitizer_v2/resources/views/auth/register.blade.php ENDPATH**/ ?>

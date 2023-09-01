@@ -1,7 +1,7 @@
 @extends('layouts.master-without-nav')
 
 @section('title')
-@lang('translation.Login')
+Conformation Code
 @endsection
 
 @section('css')
@@ -12,7 +12,7 @@
 
 @section('body')
 
-<body class="auth-body-bg">
+<body class="auth-body-bg" >
     @endsection
 
     @section('content')
@@ -93,62 +93,44 @@
                                             <img src="{{ asset('images/optimizeit-web-logo.png') }}" alt="" height="45" class="auth-logo-light">
                                         </a>
                                     </div>
-                                    <div class="row flex-between-center mt-2">
-                                        <div class="col-12">
-                                            <h3>Login</h3>
+                                    <div class="row">
+                                        <div class="col-md-12" style="padding:30px 0px 0px 0px;">
+                                            <h5 class="text-center">DO NOT CLOSE THIS WINDOW</h5>
+                                            <p class="text-left">Dear User,</p>
+                        
+                                            <p class="text-left" style="font-size:13px; font-weight:normal;">As part of our security practices, we will need you to confirm your email. Kindly look for an email from verify@optimizeit.ai, which sometimes may end up in your spam folder. Once you located the email, please get the confirmation code, and put it below to login. This is a onetime activity to confirm your email.</p>
+                        
+                                            <p class="text-left"><span style="font-size:13px; font-weight:normal;"> Thank you for signing up, we are sure you will find our solution meet your needs.</span>
+                                            </p>
                                         </div>
-                                        <div class="col-12 fs--1 text-600"><span class="mb-0 fw-semi-bold">New User?</span> <span><a class="lglink" href="{{ url('signup') }}">Create account</a></span></div>
                                     </div>
+                                    
                                     <div class="mt-4">
-                                        @if(session('succes_massage')) <p class="text-success alertmsg" id="infomsg">{{session('succes_massage')}}</p>@endif
-                                        <form class="form-horizontal" method="POST" action="{{ url('login') }}">
-                                            @csrf
-                                            <div class="mb-3">
-                                                <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
-                                                <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" id="useremail" placeholder="Enter Email" autocomplete="email" autofocus>
-                                                @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                                @enderror
-                                            </div>
+                                        <h3 class="text-center">Verification</h3>
 
-                                            <div class="mb-3">
-                                                
-                                                <label class="form-label">Password <span class="text-danger">*</span></label>
-                                                <div class="input-group auth-pass-inputgroup @error('password') is-invalid @enderror">
-                                                    <input type="password" name="password" class="form-control  @error('password') is-invalid @enderror" id="userpassword" value="" placeholder="Enter password" aria-label="Password" aria-describedby="password-addon">
-                                                    <button class="btn btn-light " type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
-                                                    @error('password')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
-                                                </div>
-                                                <div class="text-end mt-2 mb-2">
-                                                    <a href="{{ url('/forgotpassword') }}">Forgot password?</a>
-                                                </div>
-                                            </div>
+                            <form method='post' action='{{url('confirmation')}}'>
+                                @csrf
+                                <div class="mb-3">
+                                    <label class="form-label" for="split-reset-password">Email</label>
+                                    <input type="text" class="form-control" name='email' value='{{Request::get('email')}}'
+                                        readonly />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" for="split-reset-confirm-password">Verification Code</label>
+                                    <input class="form-control" type="text" name='confirmation' />
+                                </div>
+                                 @error('error')<p class="text-danger alertmsg mb-2 mb-3">{{$message}}</p>@enderror
 
-                                            {{-- <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                                <label class="form-check-label" for="remember">
-                                                    Remember me
-                                                </label>
-                                            </div> --}}
-                                            @error('error')<p class="text-danger alertmsg mb-2" id="werrmsg">{{$message}}@enderror
-                                            <div class="mt-3 d-grid">
-                                                <button class="btn btn-primary waves-effect waves-light" type="submit">Log
-                                                    In</button>
-                                            </div>
+                                <div class="mb-3" id="regbox" align="center">
+                                    <input type='hidden' name='action' value='confirm' />
+                                    <button class="btn btn-primary waves-effect waves-light"
+                                        type="submit">Verify</button>
+                                </div>
+                            </form>
 
-                                        </form>
-                                        {{-- <div class="mt-5 text-center">
-                                            <p>Don't have an account ? <a href="" class="fw-medium text-primary"> Signup now </a> </p>
-                                        </div> --}}
                                     </div>
                                 </div>
-
+                      
                                 <div class="mt-4 mt-md-5 text-center">
                                     <p class="mb-0">© <script>
                                             document.write(new Date().getFullYear())
@@ -174,14 +156,5 @@
     <!-- auth-2-carousel init -->
     <script src="{{ asset('build/js/pages/auth-2-carousel.init.js') }}"></script>
     <script>document.documentElement.setAttribute("data-bs-theme", "light");</script>
-    <script>
-        var myEfield = document.getElementById("useremail");
-        myEfield.onkeyup = function() {
-        document.getElementById("werrmsg").style.display = "none";
-        }
-        myEfield.onfocus = function() {
-        document.getElementById("infomsg").style.display = "none";
-        window.location.href = "./";
-        }
-    </script>
+   
     @endsection

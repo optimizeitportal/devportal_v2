@@ -50,7 +50,7 @@
                                     data-height="{{ $form[1]['Value_Loc']['Height'] ?? '' }}"
                                     data-left="{{ $form[1]['Value_Loc']['Left'] ?? '' }}"
                                     data-top="{{ $form[1]['Value_Loc']['Top'] ?? '' }}" type="text"
-                                    class="input-bordered BoundingBoxInput" value="<?= $form[1]['Value_Text'] ?? '' ?>"
+                                    class="form-control input-bordered BoundingBoxInput" value="<?= $form[1]['Value_Text'] ?? '' ?>"
                                     style="border-bottom: {{ $color }} 2px solid;" 
                                 />
 

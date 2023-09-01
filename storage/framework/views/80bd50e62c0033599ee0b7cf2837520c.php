@@ -24,4 +24,4 @@
 <?php else: ?>
 <div class="not_found">No Data available!</div>
 <?php endif; ?>
-<?php /**PATH E:\Laravel_projects\devportel\devportal_v2\resources\views/components/documents/raw_text.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/digitizer_v2/resources/views/components/documents/raw_text.blade.php ENDPATH**/ ?>

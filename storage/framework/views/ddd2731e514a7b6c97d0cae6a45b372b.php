@@ -4,13 +4,13 @@
 
 <?php $__env->startSection('css'); ?>
 <!-- owl.carousel css -->
-    <link rel="stylesheet" href="<?php echo e(URL::asset('build/libs/owl.carousel/assets/owl.carousel.min.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(URL::asset('build/libs/owl.carousel/assets/owl.theme.default.min.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('build/libs/owl.carousel/assets/owl.carousel.min.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('build/libs/owl.carousel/assets/owl.theme.default.min.css')); ?>">
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('body'); ?>
 
-<body class="auth-body-bg" data-bs-theme="dark" >
+<body class="auth-body-bg">
     <?php $__env->stopSection(); ?>
 
     <?php $__env->startSection('content'); ?>
@@ -82,24 +82,27 @@
                         <div class="w-100">
 
                             <div class="d-flex flex-column h-100">
-                                <div class="mb-4 mb-md-5">
-                                    <a href="<?php echo e(url('/')); ?>" class="d-block auth-logo">
-                                        <img src="<?php echo e(URL::asset('images/optimizeit-web-logo.png')); ?>" alt="" height="45" class="auth-logo-dark">
-                                        <img src="<?php echo e(URL::asset('images/optimizeit-logo-white.png')); ?>" alt="" height="45" class="auth-logo-light">
-                                    </a>
-                                </div>
+                                
                                 <div class="my-auto">
 
-                                    <div>
-                                        <h5 class="text-primary">Welcome Back !</h5>
-                                        <p class="text-muted">Sign in to continue to Optimize it.</p>
+                                    <div class="mb-4 mb-md-5 auth-logo-box">
+                                        <a href="<?php echo e(url('/')); ?>" class="d-block auth-logo ">
+                                            <img src="<?php echo e(asset('images/optimizeit-web-logo.png')); ?>" alt="" height="45" class="auth-logo-dark">
+                                            <img src="<?php echo e(asset('images/optimizeit-web-logo.png')); ?>" alt="" height="45" class="auth-logo-light">
+                                        </a>
                                     </div>
-
+                                    <div class="row flex-between-center mt-2">
+                                        <div class="col-12">
+                                            <h3>Login</h3>
+                                        </div>
+                                        <div class="col-12 fs--1 text-600"><span class="mb-0 fw-semi-bold">New User?</span> <span><a class="lglink" href="<?php echo e(url('signup')); ?>">Create account</a></span></div>
+                                    </div>
                                     <div class="mt-4">
+                                        <?php if(session('succes_massage')): ?> <p class="text-success alertmsg" id="infomsg"><?php echo e(session('succes_massage')); ?></p><?php endif; ?>
                                         <form class="form-horizontal" method="POST" action="<?php echo e(url('login')); ?>">
                                             <?php echo csrf_field(); ?>
                                             <div class="mb-3">
-                                                <label for="username" class="form-label">Email <span class="text-danger">*</span></label>
+                                                <label for="useremail" class="form-label">Email <span class="text-danger">*</span></label>
                                                 <input name="email" type="email" class="form-control <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -107,7 +110,7 @@ if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e(old('email')); ?>" id="username" placeholder="Enter Email" autocomplete="email" autofocus>
+unset($__errorArgs, $__bag); ?>" value="<?php echo e(old('email')); ?>" id="useremail" placeholder="Enter Email" autocomplete="email" autofocus>
                                                 <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -123,9 +126,7 @@ unset($__errorArgs, $__bag); ?>
                                             </div>
 
                                             <div class="mb-3">
-                                                <div class="float-end">
-                                                    <a href="<?php echo e(url('/forgotpassword')); ?>" class="text-muted">Forgot password?</a>
-                                                </div>
+                                                
                                                 <label class="form-label">Password <span class="text-danger">*</span></label>
                                                 <div class="input-group auth-pass-inputgroup <?php $__errorArgs = ['password'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -157,19 +158,27 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                 </div>
+                                                <div class="text-end mt-2 mb-2">
+                                                    <a href="<?php echo e(url('/forgotpassword')); ?>">Forgot password?</a>
+                                                </div>
                                             </div>
 
                                             
-
+                                            <?php $__errorArgs = ['error'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><p class="text-danger alertmsg mb-2" id="werrmsg"><?php echo e($message); ?><?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                             <div class="mt-3 d-grid">
                                                 <button class="btn btn-primary waves-effect waves-light" type="submit">Log
                                                     In</button>
                                             </div>
 
                                         </form>
-                                        <div class="mt-5 text-center">
-                                            <p>Don't have an account ? <a href="<?php echo e(url('signup')); ?>" class="fw-medium text-primary"> Signup now </a> </p>
-                                        </div>
+                                        
                                     </div>
                                 </div>
 
@@ -194,9 +203,20 @@ unset($__errorArgs, $__bag); ?>
     <?php $__env->stopSection(); ?>
     <?php $__env->startSection('script'); ?>
     <!-- owl.carousel js -->
-    <script src="<?php echo e(URL::asset('build/libs/owl.carousel/owl.carousel.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('build/libs/owl.carousel/owl.carousel.min.js')); ?>"></script>
     <!-- auth-2-carousel init -->
-    <script src="<?php echo e(URL::asset('build/js/pages/auth-2-carousel.init.js')); ?>"></script>
+    <script src="<?php echo e(asset('build/js/pages/auth-2-carousel.init.js')); ?>"></script>
+    <script>document.documentElement.setAttribute("data-bs-theme", "light");</script>
+    <script>
+        var myEfield = document.getElementById("useremail");
+        myEfield.onkeyup = function() {
+        document.getElementById("werrmsg").style.display = "none";
+        }
+        myEfield.onfocus = function() {
+        document.getElementById("infomsg").style.display = "none";
+        window.location.href = "./";
+        }
+    </script>
     <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Laravel_projects\devportel\devportal_v2\resources\views/auth/login.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/digitizer_v2/resources/views/auth/login.blade.php ENDPATH**/ ?>

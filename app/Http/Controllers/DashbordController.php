@@ -15,6 +15,7 @@ class DashbordController extends Controller
      */
     public function dashborad()
     {
+      
         $documents = API_repository::getSample_Document_list(); //Load Sample Documents in the Drop Down
         $uploaded_data = API_repository::getUploadedList(); // Load User Uploaded Documents List.
         $uploaded_list = $this->get_uploadList_tableFormat($uploaded_data); // Load User Uploaded Documents in the dashbord Table

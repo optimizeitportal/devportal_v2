@@ -1,13 +1,13 @@
 <?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Dashboards'); ?> <?php $__env->stopSection(); ?>
 <?php $__env->startSection('css'); ?>
     <!-- DataTables -->
-    <link href="<?php echo e(URL::asset('build/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')); ?>" rel="stylesheet"
+    <link href="<?php echo e(asset('build/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')); ?>" rel="stylesheet"
         type="text/css" />
-    <link href="<?php echo e(URL::asset('build/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')); ?>" rel="stylesheet"
+    <link href="<?php echo e(asset('build/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')); ?>" rel="stylesheet"
         type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="<?php echo e(URL::asset('build/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')); ?>"
+    <link href="<?php echo e(asset('build/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')); ?>"
         rel="stylesheet" type="text/css" />
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
@@ -69,6 +69,7 @@
                     <div class=" m-0 doc_info_cont" style="position: relative;">
                         <strong style="font-size: 14px;">Document Name
                             
+                        </strong>
                         <span class="doc_name" style="font-size: 14px"></span>
                         <div class="doc_details" style="display: none;">
                             <strong style="font-size: 14px;">Domain :</strong>
@@ -81,7 +82,7 @@
                     </div>
                     <div class="doc_page__select" style="font-size:13px; font-weight:600; padding-right:10px;">
                         Page:
-                        <select name="pageno">
+                        <select class="" name="pageno">
                             <option value="1">1</option>
                         </select>
                         <input type="hidden" id="total_page" value="1">
@@ -182,7 +183,64 @@
     </div>
 </div>
 <!-- end row -->
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="chat-bot-container">
+                    <div class="chunkos-chat">
+                        <header>
+                          <div class="flex-wrapper">
+                            Chatbot
+                          </div>
+                        </header>
+                        <div class="chat-app" id="chat-app">
+                      
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="modal fade" id="download_model" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="download_modelLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="download_modelLabel">Download</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <a target="_blank" class="download_doc_json" data-href="<?php echo e(url('download_document')); ?>"
+                                href="<?php echo e(url('download_document')); ?>">
+                                <i class="fa fa-download"></i> JSON Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <a target="_blank" class="download_doc_edi" data-href="#"
+                                href="#">
+                                <i class="fa fa-download"></i> EDI Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 
 
 <?php $__env->stopSection(); ?>
@@ -832,15 +890,15 @@
                 location.reload();
             }
         })
-        $.get("https://dev.digitizer.optimizeit.ai/chatbot", function (dataJSON) {
-            dataJSON = JSON.parse(dataJSON)
-            console.log(dataJSON)
-            $('#chat-app').chunkosChat({
-                dataJSON: dataJSON,
-            });
-        });
+        // $.get("https://dev.digitizer.optimizeit.ai/chatbot", function (dataJSON) {
+        //     dataJSON = JSON.parse(dataJSON)
+        //     console.log(dataJSON)
+        //     $('#chat-app').chunkosChat({
+        //         dataJSON: dataJSON,
+        //     });
+        // });
     })
 </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Laravel_projects\devportel\devportal_v2\resources\views/doc_verify.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/digitizer_v2/resources/views/doc_verify.blade.php ENDPATH**/ ?>

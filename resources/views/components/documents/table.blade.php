@@ -52,7 +52,7 @@
 
             <div class="tab-pane fade p-0 show {{current($nav_tab_id) ==$key ? 'active': ''}}" id="_table_{{$i++}}">
                 <div class="table-responsive">
-                    <table class="table Table_data" style="width: max-content;">
+                    <table class="table Table_data">
                         @if(isset($table['header']))
                             <thead class="table-light">
                                 @foreach ($table['header'] as $h_row_key=> $h_row)
@@ -92,7 +92,7 @@
                                                     data-left="{{ $b_col['Cell_Loc']['Left'] ?? $b_col['Merged_Cell_Loc']['Left'] ?? '' }}"
                                                     data-top="{{ $b_col['Cell_Loc']['Top'] ??$b_col['Merged_Cell_Loc']['Top'] ?? ''}}"
                                                     name="table[{{$key}}][{{$b_row_key}}][{{$b_ckey}}]" 
-                                                    class="input-bordered BoundingBoxInput" value="{{ $b_col['Cell_Text'] ?? $b_col['Merged_Cell_Text'] }}" 
+                                                    class="form-control  input-bordered BoundingBoxInput" value="{{ $b_col['Cell_Text'] ?? $b_col['Merged_Cell_Text'] }}" 
                                                     style="width:100%; height:33px; border-bottom: {{ $color }} 2px solid;"
                                                 > 
                                             </td>

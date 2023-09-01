@@ -58,8 +58,8 @@
   font-family: 'Amazon Ember';
   src: url('./webfonts/AmazonEmber_W_Rgit.eot');
   src: url('./webfonts/AmazonEmber_W_Rgit.eot?#iefix') format('embedded-opentype'),
-       url('./webfonts/AmazonEmber_W_Rglt.woff2') format('woff2'),
-       url('./webfonts/AmazonEmber_W_Rglt.woff') format('woff');
+       url('./webfonts/AmazonEmber_W_RgIt.woff2') format('woff2'),
+       url('./webfonts/AmazonEmber_W_RgIt.woff') format('woff');
   font-weight: normal;
   font-style: italic;
 }

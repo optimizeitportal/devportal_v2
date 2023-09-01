@@ -1,0 +1,338 @@
+[
+    {
+        "Key_Text": "1. MEDICARE (Medicare#)"
+    },
+    {
+        "Key_Text": "1. MEDICAID (Medicaid#)"
+    },
+    {
+        "Key_Text": "1. TRICARE (ID#\/DoD#)"
+    },
+    {
+        "Key_Text": "1. CHAMPVA (Member ID#)"
+    },
+    {
+        "Key_Text": "1. GROUP HEALTH PLAN (ID#)"
+    },
+    {
+        "Key_Text": "1. FECA BLK LUNG (ID#)"
+    },
+    {
+        "Key_Text": "1. OTHER (ID#)"
+    },
+    {
+        "Key_Text": "1a. INSUREDS I.D. NUMBER"
+    },
+    {
+        "Key_Text": "4. INSUREDS NAME (Last Name, First Name, Middle Initial)"
+    },
+    {
+        "Key_Text": "7. INSUREDS ADDRESS (No. Street)"
+    },
+    {
+        "Key_Text": "7. INSURED CITY"
+    },
+    {
+        "Key_Text": "7. INSURED STATE"
+    },
+    {
+        "Key_Text": "7. INSUREDS ZIP CODE"
+    },
+    {
+        "Key_Text": "7. INSUREDS TELEPHONE (Include Area Code)"
+    },
+    {
+        "Key_Text": "11a. INSUREDS BIRTH MONTH"
+    },
+    {
+        "Key_Text": "11a. INSUREDS BIRTH DAY"
+    },
+    {
+        "Key_Text": "11a. INSUREDS BIRTH YEAR"
+    },
+    {
+        "Key_Text": "11a. INSUREDS SEX - MALE"
+    },
+    {
+        "Key_Text": "11.a INSUREDS SEX - FEMALE"
+    },
+    {
+        "Key_Text": "11. INSUREDS POLICY GROUP OR FECA NUMBER"
+    },
+    {
+        "Key_Text": "11b. OTHER CLAIM ID (Designated by NUCC)"
+    },
+    {
+        "Key_Text": "11c. INSURED INSURANCE PLAN NAME OR PROGRAM NAME"
+    },
+    {
+        "Key_Text": "11d. ANOTHER HEALTH PLAN - YES"
+    },
+    {
+        "Key_Text": "11d. ANOTHER HEALTH PLAN - NO"
+    },
+    {
+        "Key_Text": "13. INSURED OR AUTHORIZED PERSON SIGNATURE"
+    },
+    {
+        "Key_Text": "2. PATIENTS NAME (Last Name, First Name, Middle Initial)"
+    },
+    {
+        "Key_Text": "5. PATIENTS ADDRESS (No. Street)"
+    },
+    {
+        "Key_Text": "5. PATIENTS CITY"
+    },
+    {
+        "Key_Text": "5. PATIENTS STATE"
+    },
+    {
+        "Key_Text": "5. PATIENTS ZIP CODE"
+    },
+    {
+        "Key_Text": "5. PATIENTS TELEPHONE (Include Area Code)"
+    },
+    {
+        "Key_Text": "3. PATIENTS BIRTH MONTH"
+    },
+    {
+        "Key_Text": "3. PATIENTS BIRTH DAY"
+    },
+    {
+        "Key_Text": "3. PATIENTS BIRTH YEAR"
+    },
+    {
+        "Key_Text": "3. PATIENTS SEX - MALE"
+    },
+    {
+        "Key_Text": "3. PATIENTS SEX - FEMALE"
+    },
+    {
+        "Key_Text": "6. PATIENTS RELATION TO INSURED - Self"
+    },
+    {
+        "Key_Text": "6. PATIENTS RELATION TO INSURED - Spouse"
+    },
+    {
+        "Key_Text": "6. PATIENTS RELATION TO INSURED - Child"
+    },
+    {
+        "Key_Text": "6. PATIENTS RELATION TO INSURED - Other"
+    },
+    {
+        "Key_Text": "10a. PATIENTS CONDITION RELATED TO EMPLOYMENT - YES"
+    },
+    {
+        "Key_Text": "10a. PATIENTS CONDITION RELATED TO EMPLOYMENT - NO"
+    },
+    {
+        "Key_Text": "10b. AUTO ACCIDENT - YES"
+    },
+    {
+        "Key_Text": "10b. AUTO ACCIDENT - NO"
+    },
+    {
+        "Key_Text": "10b. AUTO ACCIDENT - PLACE (State)"
+    },
+    {
+        "Key_Text": "10c. OTHER ACCIDENT - YES"
+    },
+    {
+        "Key_Text": "10c. OTHER ACCIDENT - NO"
+    },
+    {
+        "Key_Text": "12. PATIENT OR AUTHORIZED PERSON SIGNATURE"
+    },
+    {
+        "Key_Text": "12. PATIENT OR AUTHORIZED PERSON SIGNATURE DATE"
+    },
+    {
+        "Key_Text": "9. OTHER INSUREDS NAME (Last Name, First Name, Middle Initial)"
+    },
+    {
+        "Key_Text": "9a. OTHER INSUREDS POLICY OR GROUP NUMBER"
+    },
+    {
+        "Key_Text": "9d. OTHER INSURED INSURANCE PLAN NAME OR PROGRAM NAME"
+    },
+    {
+        "Key_Text": "10d. CLAIM CODES (Designated by NUCC)"
+    },
+    {
+        "Key_Text": "14. DATE OF CURRENT ILLNESS, INJURY, or PREGNANCY (LMP) - MONTH"
+    },
+    {
+        "Key_Text": "14. DATE OF CURRENT ILLNESS, INJURY, or PREGNANCY (LMP) - DAY"
+    },
+    {
+        "Key_Text": "14. DATE OF CURRENT ILLNESS, INJURY, or PREGNANCY (LMP) - YEAR"
+    },
+    {
+        "Key_Text": "14. QUALIFIER"
+    },
+    {
+        "Key_Text": "15. OTHER DATE - MONTH"
+    },
+    {
+        "Key_Text": "15. OTHER DATE - DAY"
+    },
+    {
+        "Key_Text": "15. OTHER DATE - YEAR"
+    },
+    {
+        "Key_Text": "15. QUALIFIER"
+    },
+    {
+        "Key_Text": "16. DATES PATIENT UNABLE TO WORK FROM - MONTH"
+    },
+    {
+        "Key_Text": "16. DATES PATIENT UNABLE TO WORK FROM - DAY"
+    },
+    {
+        "Key_Text": "16. DATES PATIENT UNABLE TO WORK FROM - YEAR"
+    },
+    {
+        "Key_Text": "16. DATES PATIENT UNABLE TO WORK TO - MONTH"
+    },
+    {
+        "Key_Text": "16. DATES PATIENT UNABLE TO WORK TO - DAY"
+    },
+    {
+        "Key_Text": "16. DATES PATIENT UNABLE TO WORK TO - YEAR"
+    },
+    {
+        "Key_Text": "18. HOSPITALIZATION FROM - MONTH"
+    },
+    {
+        "Key_Text": "18. HOSPITALIZATION FROM - DAY"
+    },
+    {
+        "Key_Text": "18. HOSPITALIZATION FROM - YEAR"
+    },
+    {
+        "Key_Text": "18. HOSPITALIZATION TO - MONTH"
+    },
+    {
+        "Key_Text": "18. HOSPITALIZATION TO - DAY"
+    },
+    {
+        "Key_Text": "18. HOSPITALIZATION TO - YEAR"
+    },
+    {
+        "Key_Text": "17. NAME OF REFERRING PROVIDER OR OTHER SOURCE"
+    },
+    {
+        "Key_Text": "17a."
+    },
+    {
+        "Key_Text": "17b."
+    },
+    {
+        "Key_Text": "19. ADDITIONAL CLAIM INFORMATION (Designated by NUCC)"
+    },
+    {
+        "Key_Text": "20. OUTSIDE LAB - YES"
+    },
+    {
+        "Key_Text": "20. OUTSIDE LAB - NO"
+    },
+    {
+        "Key_Text": "20. OUTSIDE LAB CHARGES"
+    },
+    {
+        "Key_Text": "22. RESUBMISSION CODE"
+    },
+    {
+        "Key_Text": "22. ORIGINAL REF. NO."
+    },
+    {
+        "Key_Text": "23. PRIOR AUTHORIZATION NUMBER"
+    },
+    {
+        "Key_Text": "21. ICD INDICATOR"
+    },
+    {
+        "Key_Text": "21. ICD CODE - A"
+    },
+    {
+        "Key_Text": "21. ICD CODE - B"
+    },
+    {
+        "Key_Text": "21. ICD CODE - C"
+    },
+    {
+        "Key_Text": "21. ICD CODE - D"
+    },
+    {
+        "Key_Text": "21. ICD CODE - E"
+    },
+    {
+        "Key_Text": "21. ICD CODE - F"
+    },
+    {
+        "Key_Text": "21. ICD CODE - G"
+    },
+    {
+        "Key_Text": "21. ICD CODE - H"
+    },
+    {
+        "Key_Text": "21. ICD CODE - I"
+    },
+    {
+        "Key_Text": "21. ICD CODE - J"
+    },
+    {
+        "Key_Text": "21. ICD CODE - K"
+    },
+    {
+        "Key_Text": "21. ICD CODE - L"
+    },
+    {
+        "Key_Text": "25. FEDERAL TAX I.D. NUMBER"
+    },
+    {
+        "Key_Text": "25. SSN"
+    },
+    {
+        "Key_Text": "25. EIN"
+    },
+    {
+        "Key_Text": "26. PATIENTS ACCOUNT NO."
+    },
+    {
+        "Key_Text": "27. ACCEPT ASSIGNMENT - YES"
+    },
+    {
+        "Key_Text": "27. ACCEPT ASSIGNMENT - NO"
+    },
+    {
+        "Key_Text": "28. TOTAL CHARGE"
+    },
+    {
+        "Key_Text": "29. AMOUNT PAID"
+    },
+    {
+        "Key_Text": "32. SERVICE FACILITY LOCATION INFORMATION"
+    },
+    {
+        "Key_Text": "32a. "
+    },
+    {
+        "Key_Text": "32b."
+    },
+    {
+        "Key_Text": "33. BILLING PROVIDER INFO & PH #"
+    },
+    {
+        "Key_Text": "33a."
+    },
+    {
+        "Key_Text": "33b."
+    },
+    {
+        "Key_Text": "31. SIGNATURE OF PHYSICIAN OR SUPPLIER"
+    },
+    {
+        "Key_Text": "31. SIGNATURE OF PHYSICIAN OR SUPPLIER - DATE"
+    }
+]

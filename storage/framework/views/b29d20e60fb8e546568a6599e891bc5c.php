@@ -1,5 +1,5 @@
 <div>
-    {{-- metrics_list --}}
+    
     <table id="metrics_list" class="styled-table metrics">
         <thead>
             <tr>
@@ -10,14 +10,14 @@
         </thead>
         <tbody>
             <tr>
-                <td class="doc_count">{{ $doc_metrics['doc_count'] }}</td>
-                <td class="processed">{{ $doc_metrics['processed'] }}</td>
-                <td class="extracted">{{ $doc_metrics['extracted'] }}</td>
+                <td class="doc_count"><?php echo e($doc_metrics['doc_count']); ?></td>
+                <td class="processed"><?php echo e($doc_metrics['processed']); ?></td>
+                <td class="extracted"><?php echo e($doc_metrics['extracted']); ?></td>
             </tr>
         </tbody>
     </table>
 
-    {{-- metrics_list 2 --}}
+    
     <div class="row" id='metrics2'>
         <div class="col-md-4">
             <div class="card mini-stats-wid">
@@ -25,7 +25,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <p class="text-muted fw-medium">Doc Count</p>
-                            <h4 class="mb-0">{{ $doc_metrics['doc_count'] }}</h4>
+                            <h4 class="mb-0"><?php echo e($doc_metrics['doc_count']); ?></h4>
                         </div>
 
                         <div class="flex-shrink-0 align-self-center">
@@ -45,7 +45,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <p class="text-muted fw-medium">Processed</p>
-                            <h4 class="mb-0">{{ $doc_metrics['processed'] }}</h4>
+                            <h4 class="mb-0"><?php echo e($doc_metrics['processed']); ?></h4>
                         </div>
 
                         <div class="flex-shrink-0 align-self-center">
@@ -66,7 +66,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <p class="text-muted fw-medium">Extracted</p>
-                            <h4 class="mb-0">{{ $doc_metrics['extracted'] }}</h4>
+                            <h4 class="mb-0"><?php echo e($doc_metrics['extracted']); ?></h4>
                         </div>
 
                         <div class="flex-shrink-0 align-self-center ">
@@ -81,8 +81,8 @@
             </div>
         </div>
     </div>
-    {{-- Uploade_list --}}
-    <table id="ListTable" class="table table-bordered dt-responsive  nowrap w-100 {{ !empty($uploaded_list) ? 'dataTable' : '' }}">
+    
+    <table id="ListTable" class="table table-bordered dt-responsive  nowrap w-100 <?php echo e(!empty($uploaded_list) ? 'dataTable' : ''); ?>">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -93,69 +93,69 @@
             </tr>
         </thead>
         <tbody>
-            @if (!empty($uploaded_list))
-                @foreach ($uploaded_list as $k => $list_val)
+            <?php if(!empty($uploaded_list)): ?>
+                <?php $__currentLoopData = $uploaded_list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $k => $list_val): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                        <td>{{ $k + 1 }}</td>
-                        <td>{{ $list_val['file_name'] }}
+                        <td><?php echo e($k + 1); ?></td>
+                        <td><?php echo e($list_val['file_name']); ?>
+
                         </td>
-                        <td data-sort="{{ strtotime($list_val['updated_on']) }}">{{ $list_val['updated_on'] }}</td>
-                        <td>{{ $list_val['status']  == "UPLOADED" ? "PROCESSING" : $list_val['status'] }}</td>
+                        <td data-sort="<?php echo e(strtotime($list_val['updated_on'])); ?>"><?php echo e($list_val['updated_on']); ?></td>
+                        <td><?php echo e($list_val['status']  == "UPLOADED" ? "PROCESSING" : $list_val['status']); ?></td>
                         <td>
                             <a
-                                href="{{ $list_val['status'] == 'UPLOADED' ? 'javascript:void(0)' : url('doc_verify?file=' . $list_val['files']) }}&action=view">
+                                href="<?php echo e($list_val['status'] == 'UPLOADED' ? 'javascript:void(0)' : url('doc_verify?file=' . $list_val['files'])); ?>&action=view">
                                 <button class="btn action_btn view" data-toggle="tooltip" data-placement="top"
-                                    @if ($list_val['status'] == 'UPLOADED') data-bs-html="true"
-                                        title="<img width='17px' height='17px' src='{{asset('images/spinner.gif')}}'> <p>Please wait till the file is processed<p>"
-                                    @else
+                                    <?php if($list_val['status'] == 'UPLOADED'): ?> data-bs-html="true"
+                                        title="<img width='17px' height='17px' src='<?php echo e(asset('images/spinner.gif')); ?>'> <p>Please wait till the file is processed<p>"
+                                    <?php else: ?>
                                         title="view" 
-                                    @endif
+                                    <?php endif; ?>
                                 >
                                     <i class="fa fa-eye"></i></button>
                             </a>
                                 <a
-                                href="{{$list_val['status'] == 'UPLOADED' ? "javascript:void(0)" : url('doc_verify?file=' . $list_val['files']) }}&action=edit">
+                                href="<?php echo e($list_val['status'] == 'UPLOADED' ? "javascript:void(0)" : url('doc_verify?file=' . $list_val['files'])); ?>&action=edit">
                                 <button class="btn action_btn edit"
                                     data-toggle="tooltip" data-placement="top"
-                                    @if( $list_val['status'] == 'UPLOADED')
+                                    <?php if( $list_val['status'] == 'UPLOADED'): ?>
                                     data-bs-html="true"
-                                    title="<img width='17px' height='17px' src='{{asset('images/spinner.gif')}}'> <p>Please wait till the file is processed<p>"
-                                    @else
+                                    title="<img width='17px' height='17px' src='<?php echo e(asset('images/spinner.gif')); ?>'> <p>Please wait till the file is processed<p>"
+                                    <?php else: ?>
                                     title="Edit"
-                                    @endif
+                                    <?php endif; ?>
                                         > 
                                 
                                         
                                     <i class="fa fa-edit"></i></button>
                             </a>
                             <a
-                                href="{{ $list_val['status'] == 'UPLOADED' ? "javascript:void(0)" : url('download_document?file_name=' . session('account_id') . '/' . current(explode('.', $list_val['files'])) . '_Key_Value_Result.json') }}">
+                                href="<?php echo e($list_val['status'] == 'UPLOADED' ? "javascript:void(0)" : url('download_document?file_name=' . session('account_id') . '/' . current(explode('.', $list_val['files'])) . '_Key_Value_Result.json')); ?>">
                                 <button class="btn action_btn download"
                                     data-toggle="tooltip" data-placement="top"
-                                    @if( $list_val['status'] == 'UPLOADED')
+                                    <?php if( $list_val['status'] == 'UPLOADED'): ?>
                                     data-bs-html="true"
-                                    title="<img width='17px' height='17px' src='{{asset('images/spinner.gif')}}'> <p>Please wait till the file is processed<p>"
-                                    @else
+                                    title="<img width='17px' height='17px' src='<?php echo e(asset('images/spinner.gif')); ?>'> <p>Please wait till the file is processed<p>"
+                                    <?php else: ?>
                                     title="Download"
-                                    @endif
+                                    <?php endif; ?>
                                     
                                     > <i
                                         class="fa fa-download"></i></button>
                             </a>
-                            {{-- <a href="javascript:viod(0)">
-                                <button class="btn action_btn delete"> <i class="fa fa-trash"></i></button> 
-                             </a>  --}}
+                            
                         </td>
                     </tr>
-                @endforeach
-            @else
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php else: ?>
                 <tr class="text-center">
                     <td colspan="5">
                         No Data available!
                     </td>
                 </tr>
-            @endif
+            <?php endif; ?>
 
         </tbody>
     </table>
 </div>
+<?php /**PATH /var/www/html/digitizer_v2/resources/views/components/documents/uploade_list.blade.php ENDPATH**/ ?>

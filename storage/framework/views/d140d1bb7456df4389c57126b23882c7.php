@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="utf-8" />
-    <title> <?php echo $__env->yieldContent('title'); ?> | Skote - Admin & Dashboard Template</title>
+    <title> <?php echo $__env->yieldContent('title'); ?> | Optimize it</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
+    <meta content="OptimizeIT Solutions" name="description" />
+    <meta content="optimizeit" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?php echo e(URL::asset('build/images/favicon.ico')); ?>">
+    <link rel="shortcut icon" href="<?php echo e(asset('images/favicon.ico')); ?>">
     <?php echo $__env->make('layouts.head-css', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <script>document.documentElement.setAttribute("data-bs-theme", "dark");</script>
 </head>
 
 <?php $__env->startSection('body'); ?>
@@ -17,6 +18,16 @@
 <?php echo $__env->yieldSection(); ?>
     <!-- Begin page -->
     <div id="layout-wrapper">
+        <div id="preloader" style="display: none">
+            <div id="loader"></div>
+            <div class="timer"></div>
+            <div id="loader_text" style="display: none">
+                <h6></h6>
+                <span style="--i:1">.</span>
+                <span style="--i:2">.</span>
+                <span style="--i:3">.</span>
+            </div>
+        </div>
         <?php echo $__env->make('layouts.topbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <!-- ============================================================== -->
@@ -42,7 +53,8 @@
 
     <!-- JAVASCRIPT -->
     <?php echo $__env->make('layouts.vendor-scripts', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+   
 </body>
 
 </html>
-<?php /**PATH E:\Laravel_projects\devportel\devportal_v2\resources\views/layouts/master.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/digitizer_v2/resources/views/layouts/master.blade.php ENDPATH**/ ?>

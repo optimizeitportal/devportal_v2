@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="utf-8" />
-    <title> @yield('title') | Skote - Admin & Dashboard Template</title>
+    <title> @yield('title') | Optimize it</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
+    <meta content="OptimizeIT Solutions" name="description" />
+    <meta content="optimizeit" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('build/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
     @include('layouts.head-css')
+    <script>document.documentElement.setAttribute("data-bs-theme", "dark");</script>
 </head>
 
 @section('body')
@@ -17,6 +18,16 @@
 @show
     <!-- Begin page -->
     <div id="layout-wrapper">
+        <div id="preloader" style="display: none">
+            <div id="loader"></div>
+            <div class="timer"></div>
+            <div id="loader_text" style="display: none">
+                <h6></h6>
+                <span style="--i:1">.</span>
+                <span style="--i:2">.</span>
+                <span style="--i:3">.</span>
+            </div>
+        </div>
         @include('layouts.topbar')
         @include('layouts.sidebar')
         <!-- ============================================================== -->
@@ -42,6 +53,7 @@
 
     <!-- JAVASCRIPT -->
     @include('layouts.vendor-scripts')
+   
 </body>
 
 </html>

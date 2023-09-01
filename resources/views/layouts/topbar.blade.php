@@ -8,7 +8,7 @@
                         <img src="{{ asset('images/favicon.ico') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('images/optimizeit-web-logo.png') }}" alt="" height="17">
+                        <img src="{{ asset('images/optimizeit-web-logo.png') }}" alt="" height="40">
                     </span>
                 </a>
 
@@ -17,7 +17,7 @@
                         <img src="{{ asset('images/favicon.ico') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('images/optimizeit-logo-white.png') }}" alt="" height="19">
+                        <img src="{{ asset('images/optimizeit-web-logo.png') }}" alt="" height="40">
                     </span>
                 </a>
             </div>
@@ -27,14 +27,14 @@
             </button>
 
            <!-- App Search-->
-           <form class="app-search d-none d-lg-block">
+           {{-- <form class="app-search d-none d-lg-block">
             <div class="position-relative">
                 <input type="text" class="form-control" placeholder="@lang('translation.Search')">
                 <span class="bx bx-search-alt"></span>
             </div>
-        </form>
+        </form> --}}
 
-        <div class="dropdown dropdown-mega d-none d-lg-block ms-2">
+        {{-- <div class="dropdown dropdown-mega d-none d-lg-block ms-2">
             <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                 <span key="t-megamenu">@lang('translation.Mega_Menu')</span>
                 <i class="mdi mdi-chevron-down"></i>
@@ -163,12 +163,12 @@
                 </div>
 
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <div class="d-flex">
 
-        <div class="dropdown d-inline-block d-lg-none ms-2">
+        {{-- <div class="dropdown d-inline-block d-lg-none ms-2">
             <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="mdi mdi-magnify"></i>
@@ -291,8 +291,8 @@
             <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
                 <i class="bx bx-fullscreen"></i>
             </button>
-        </div>
-        <div class="dropdown d-inline-block">
+        </div> --}}
+        {{-- <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="bx bx-bell bx-tada"></i>
@@ -377,34 +377,54 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-circle header-profile-user" src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('build/images/users/avatar-1.jpg') }}"
-                    alt="Header Avatar">
+                {{-- <img class="rounded-circle header-profile-user" src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('build/images/users/avatar-1.jpg') }}"
+                    alt="Header Avatar"> --}}
+                <div class="rounded-circle text-center" style="background:#ff8d00;padding: 4px 10px;color: #fff;font-weight: bolder;width: 28px;height: 28px;display: inline-flex;">
+                    {{strtoupper(session('user_name')[0])}}
+                </div>
                 <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucfirst(session('user_name'))}}</span>
                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
             </button>
             <div class="dropdown-menu dropdown-menu-end">
                 <!-- item-->
-                <a class="dropdown-item" href="contacts-profile"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">@lang('translation.Profile')</span></a>
-                <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">@lang('translation.My_Wallet')</span></a>
-                <a class="dropdown-item d-block" href="#" data-bs-toggle="modal" data-bs-target=".change-password"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">@lang('translation.Settings')</span></a>
-                <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">@lang('translation.Lock_screen')</span></a>
+                <div class="" style="display: flex;margin-bottom: 0;align-items: center;">
+                    <div class="" style="position: relative;flex-shrink: 0;margin: 0px 15px;">
+                        <div class="rounded-circle" style="background:#ff8d00; padding: 5px 15px;color: #fff; font-weight: bolder; font-size: 21px; width: 42px; height: 42px;">
+                            {{strtoupper(session('user_name')[0])}}
+                        </div>
+                        
+                    </div>
+                    <div class="feature-text">
+                        <h5 style="margin-bottom:0px;">
+                            {{ucwords(session('user_name'))}}</h5>
+                        <p style="font-size:13px; font-weight:normal;">
+                           {{session('user_email')}} </p>
+                    </div>
+                </div>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-danger" href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">@lang('translation.Logout')</span></a>
+                <a class="dropdown-item" href="javascript:void(0)"><span>Account ID :</span> <span> {{session('account_id')}}</span></a>
+                <a class="dropdown-item" href="javascript:void(0)"><span>Organization :</span> {{ ucfirst(session('user_organization'))}}<span> </span></a>
+                <a class="dropdown-item" href="javascript:void(0)"><span>Subscription :</span> <span> Freemium Plan</span></a>
+                {{-- <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">@lang('translation.My_Wallet')</span></a>
+                <a class="dropdown-item d-block" href="#" data-bs-toggle="modal" data-bs-target=".change-password"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">@lang('translation.Settings')</span></a>
+                <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">@lang('translation.Lock_screen')</span></a> --}}
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item text-danger text-center" href="{{url('logout')}}" ><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">@lang('translation.Logout')</span></a>
                 <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
                     @csrf
-                </form>
+                </form> 
             </div>
         </div>
-        <div class="dropdown d-inline-block">
+        {{-- <div class="dropdown d-inline-block">
             <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
                 <i class="bx bx-cog bx-spin"></i>
             </button>
-        </div>
+        </div> --}}
     </div>
 </div>
 </header>

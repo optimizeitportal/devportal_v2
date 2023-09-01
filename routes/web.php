@@ -68,10 +68,10 @@ Route::post('forgot_password_code', 'UserController@forgot_password_code');
 Route::post('password_code_verify', 'UserController@password_code_verify');
 Route::group(['middleware'=>"isLogin"],function () {
     // dashboard
-    Route::get('dashboard', [DashbordController::class,'dashborad']);
-    // Route::get('dashboard', function () {
-    //     return view('dashboard');
-    // });
+    Route::get('dashboard', function () {
+        return view('dashboard_chart');
+    });
+    Route::get('d-board', [DashbordController::class,'dashborad']);
     Route::get('analyze', function () {
         return view('analyze');
     });

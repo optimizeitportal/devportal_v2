@@ -16,4 +16,4 @@
         </div>
     </div>
 </div>
-<!-- end page title --><?php /**PATH E:\Laravel_projects\devportel\devportal_v2\resources\views/components/breadcrumb.blade.php ENDPATH**/ ?>
+<!-- end page title --><?php /**PATH /var/www/html/digitizer_v2/resources/views/components/breadcrumb.blade.php ENDPATH**/ ?>

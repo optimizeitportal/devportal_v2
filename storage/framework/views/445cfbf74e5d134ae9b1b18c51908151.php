@@ -7,4 +7,4 @@
         </div>
     </div>
 </footer>
-<?php /**PATH E:\Laravel_projects\devportel\devportal_v2\resources\views/layouts/footer.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/digitizer_v2/resources/views/layouts/footer.blade.php ENDPATH**/ ?>

@@ -1,9 +1,9 @@
 <!-- JAVASCRIPT -->
-<script src="<?php echo e(URL::asset('build/libs/jquery/jquery.min.js')); ?>"></script>
-<script src="<?php echo e(URL::asset('build/libs/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
-<script src="<?php echo e(URL::asset('build/libs/metismenu/metisMenu.min.js')); ?>"></script>
-<script src="<?php echo e(URL::asset('build/libs/simplebar/simplebar.min.js')); ?>"></script>
-<script src="<?php echo e(URL::asset('build/libs/node-waves/waves.min.js')); ?>"></script>
+<script src="<?php echo e(asset('build/libs/jquery/jquery.min.js')); ?>"></script>
+<script src="<?php echo e(asset('build/libs/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
+<script src="<?php echo e(asset('build/libs/metismenu/metisMenu.min.js')); ?>"></script>
+<script src="<?php echo e(asset('build/libs/simplebar/simplebar.min.js')); ?>"></script>
+<script src="<?php echo e(asset('build/libs/node-waves/waves.min.js')); ?>"></script>
 <script>
     $('#change-password').on('submit',function(event){
         event.preventDefault();
@@ -27,11 +27,11 @@
                 $('#current_passwordError').text('');
                 $('#passwordError').text('');
                 $('#password_confirmError').text('');
-                if(response.isSuccess == false){ 
+                if(response.isSuccess == false){
                     $('#current_passwordError').text(response.Message);
                 }else if(response.isSuccess == true){
-                    setTimeout(function () {   
-                        window.location.href = "<?php echo e(route('root')); ?>"; 
+                    setTimeout(function () {
+                        window.location.href = "<?php echo e(route('root')); ?>";
                     }, 1000);
                 }
             },
@@ -43,10 +43,14 @@
         });
     });
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <?php echo $__env->yieldContent('script'); ?>
 
 <!-- App js -->
-<script src="<?php echo e(URL::asset('build/js/app.js')); ?>"></script>
+<script src="<?php echo e(asset('build/js/app.js')); ?>"></script>
 
-<?php echo $__env->yieldContent('script-bottom'); ?><?php /**PATH E:\Laravel_projects\devportel\devportal_v2\resources\views/layouts/vendor-scripts.blade.php ENDPATH**/ ?>
+
+
+<?php echo $__env->yieldContent('script-bottom'); ?>
+<?php /**PATH /var/www/html/digitizer_v2/resources/views/layouts/vendor-scripts.blade.php ENDPATH**/ ?>

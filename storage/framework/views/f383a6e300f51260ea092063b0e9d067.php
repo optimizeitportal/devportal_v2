@@ -52,7 +52,7 @@
 
             <div class="tab-pane fade p-0 show <?php echo e(current($nav_tab_id) ==$key ? 'active': ''); ?>" id="_table_<?php echo e($i++); ?>">
                 <div class="table-responsive">
-                    <table class="table Table_data" style="width: max-content;">
+                    <table class="table Table_data">
                         <?php if(isset($table['header'])): ?>
                             <thead class="table-light">
                                 <?php $__currentLoopData = $table['header']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $h_row_key=> $h_row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -92,7 +92,7 @@
                                                     data-left="<?php echo e($b_col['Cell_Loc']['Left'] ?? $b_col['Merged_Cell_Loc']['Left'] ?? ''); ?>"
                                                     data-top="<?php echo e($b_col['Cell_Loc']['Top'] ??$b_col['Merged_Cell_Loc']['Top'] ?? ''); ?>"
                                                     name="table[<?php echo e($key); ?>][<?php echo e($b_row_key); ?>][<?php echo e($b_ckey); ?>]" 
-                                                    class="input-bordered BoundingBoxInput" value="<?php echo e($b_col['Cell_Text'] ?? $b_col['Merged_Cell_Text']); ?>" 
+                                                    class="form-control  input-bordered BoundingBoxInput" value="<?php echo e($b_col['Cell_Text'] ?? $b_col['Merged_Cell_Text']); ?>" 
                                                     style="width:100%; height:33px; border-bottom: <?php echo e($color); ?> 2px solid;"
                                                 > 
                                             </td>
@@ -109,4 +109,4 @@
 <?php else: ?>
     <div class="not_found">No Data available!</div>
 <?php endif; ?>
-<?php /**PATH E:\Laravel_projects\devportel\devportal_v2\resources\views/components/documents/table.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/digitizer_v2/resources/views/components/documents/table.blade.php ENDPATH**/ ?>

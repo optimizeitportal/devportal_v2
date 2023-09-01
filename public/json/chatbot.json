@@ -1,0 +1,118 @@
+[
+    {
+        "id": 1,
+        "text": "",
+        "messageType": "MTIO",
+        "imageUrl": "https://st3.depositphotos.com/8950810/17657/v/450/depositphotos_176577870-stock-illustration-cute-smiling-funny-robot-chat.jpg",
+        "nextMessageId": "",
+        "texts": [
+            {
+                "id": 1,
+                "text": "Hello! I'm InsuranceBot."
+            },
+            {
+                "id": 2,
+                "text": "What type of insurance information are you looking for?"
+            }
+        ],
+        "optionType": "insurance_type",
+        "options": [
+            {
+                "id": 1,
+                "label": "Auto Insurance",
+                "value": "auto",
+                "nextMessageId": 2
+            },
+            {
+                "id": 2,
+                "label": "Home Insurance",
+                "value": "home",
+                "nextMessageId": 2
+            },
+            {
+                "id": 3,
+                "label": "Health Insurance",
+                "value": "health",
+                "nextMessageId": 2
+            },
+            {
+                "id": 4,
+                "label": "Life Insurance",
+                "value": "life",
+                "nextMessageId": 2
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "text": "",
+        "messageType": "AMTO",
+        "imageUrl": "",
+        "nextMessageId": "",
+        "texts": [
+            {
+                "id": 1,
+                "text": "Great choice! What specific information do you need about {INSURANCE_TYPE}?"
+            }
+        ],
+        "optionType": "insurance_info",
+        "options": [
+            {
+                "id": 1,
+                "label": "Coverage Details",
+                "value": "coverage",
+                "nextMessageId": 3
+            },
+            {
+                "id": 2,
+                "label": "Premium Costs",
+                "value": "premium",
+                "nextMessageId": 3
+            },
+            {
+                "id": 3,
+                "label": "Claim Process",
+                "value": "claim",
+                "nextMessageId": 3
+            },
+            {
+                "id": 4,
+                "label": "Policy Benefits",
+                "value": "benefits",
+                "nextMessageId": 3
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "text": "",
+        "messageType": "AMTO",
+        "imageUrl": "",
+        "nextMessageId": "",
+        "texts": [
+            {
+                "id": 1,
+                "text": "Here's the information you requested about {INSURANCE_TYPE} {INFO_TYPE}:"
+            },
+            {
+                "id": 2,
+                "text": "{INSURANCE_TYPE} {INFO_TYPE} details will be provided here."
+            }
+        ],
+        "optionType": "done",
+        "options": [
+            {
+                "id": 1,
+                "label": "Back to Menu",
+                "value": "back",
+                "nextMessageId": 1
+            },
+            {
+                "id": 2,
+                "label": "Exit",
+                "value": "exit",
+                "nextMessageId": -1
+            }
+        ]
+    }
+]

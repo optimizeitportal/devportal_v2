@@ -50,7 +50,7 @@
                                     data-height="<?php echo e($form[1]['Value_Loc']['Height'] ?? ''); ?>"
                                     data-left="<?php echo e($form[1]['Value_Loc']['Left'] ?? ''); ?>"
                                     data-top="<?php echo e($form[1]['Value_Loc']['Top'] ?? ''); ?>" type="text"
-                                    class="input-bordered BoundingBoxInput" value="<?= $form[1]['Value_Text'] ?? '' ?>"
+                                    class="form-control input-bordered BoundingBoxInput" value="<?= $form[1]['Value_Text'] ?? '' ?>"
                                     style="border-bottom: <?php echo e($color); ?> 2px solid;" 
                                 />
 
@@ -65,4 +65,4 @@
 <?php else: ?>
     <div class="not_found">No Data available!</div>
 <?php endif; ?>
-<?php /**PATH E:\Laravel_projects\devportel\devportal_v2\resources\views/components/documents/form.blade.php ENDPATH**/ ?>
+<?php /**PATH /var/www/html/digitizer_v2/resources/views/components/documents/form.blade.php ENDPATH**/ ?>
