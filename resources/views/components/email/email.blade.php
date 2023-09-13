@@ -44,25 +44,33 @@
             </tr>
             
             <tr>
-                <td align="center" style="font-family: 'Raleway', sans-serif; font-size:16px;  color:#2a3a4b; padding:10px;">
-                    <b>Name :  </b>{{ $name }}</td>
+                <td align="left" style="font-family: 'Raleway', sans-serif; font-size:16px;  color:#2a3a4b; padding:10px;">
+                    <b>First Name :  </b>{{ $first_name }}</td>
             </tr>
             <tr>
-                <td align="center" style="font-family: 'Raleway', sans-serif; font-size:16px;  color:#2a3a4b; padding:10px;">
+                <td align="left" style="font-family: 'Raleway', sans-serif; font-size:16px;  color:#2a3a4b; padding:10px;">
+                    <b>Last Name :  </b>{{ $last_name }}</td>
+            </tr>
+            <tr>
+                <td align="left" style="font-family: 'Raleway', sans-serif; font-size:16px;  color:#2a3a4b; padding:10px;">
                     <b>Email :  </b>{{ $email }}</td>
             </tr>
             <tr>
-                <td align="center" style="font-family: 'Raleway', sans-serif; font-size:16px;  color:#2a3a4b; padding:10px;">
-                    <b>Questions :  </b>{{ $question }}</td>
+                <td align="left" style="font-family: 'Raleway', sans-serif; font-size:16px;  color:#2a3a4b; padding:10px;">
+                    <b>Company Name :  </b>{{ $company_name }}</td>
             </tr>
             <tr>
                 <td height="10"></td>
             </tr>
             <tr>
-                <td align="center" style="font-family: 'Raleway', sans-serif; font-size:18px; color:#2a3a4b; line-height:24px; font-weight: 300; padding:0px 20px; text-indent: 20px;">
+                <td align="left" style="font-family: 'Raleway', sans-serif; font-size:16px;  color:#2a3a4b; padding:10px;">
+                    <b>Message :  </b>{{ $msg }}</td>
+            </tr>
+            {{-- <tr>
+                <td align="left" style="font-family: 'Raleway', sans-serif; font-size:18px; color:#2a3a4b; line-height:24px; font-weight: 300; padding:0px 20px; text-indent: 20px;">
                     {{ $msg }}
                 </td>
-            </tr>
+            </tr> --}}
             <tr>
                 <td height="20"></td>
             </tr>

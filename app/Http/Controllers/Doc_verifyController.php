@@ -332,14 +332,18 @@ class Doc_verifyController extends Controller
     public function send_forms(Request $request)
     {
         $forms = unserialize($request->form_data);
-      
-        $output = CMS1500FormProcessor::manipulateDates($forms);
-        $outputData = CMS1500FormProcessor::manipulateAddresses($output);
-        // Output the result
-        dd(json_encode($outputData, JSON_PRETTY_PRINT));
+        // dd($request->input);
+        // $output = CMS1500FormProcessor::manipulateDates($forms);
+        // $outputData = CMS1500FormProcessor::manipulateAddresses($output);
+        // // Output the result
+        // dd(json_encode($outputData, JSON_PRETTY_PRINT));
         
         foreach ($request->input as $key => $value) {
-            $forms[$key][1]['Value_Text'] = $value;
+            $forms[$key][1]['Value_Text'] = $value['value'];
+            $forms[$key][1]['select_for_data_contract'] = $value['element_selected'];
+            if(isset($value['edited_lable'])){
+                $forms[$key][0]['Alternative_Key_Text'] = $value['edited_lable'];
+            }
         }
         $file_name = API_repository::build_file_name($request, 'forms');
         $res = API_repository::send_result($file_name, json_encode($forms));

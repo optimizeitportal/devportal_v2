@@ -106,30 +106,9 @@ Route::group(['middleware'=>"isLogin"],function () {
     Route::get('ada_dental', function () {
         return view('forms.Ada_dental');
     });
-
-
-
-
-
+    
 });
 
-Route::get('fake_login',function () {
-    $array = [
-        "login_time" => 1693307841,
-        "ExpiresIn" => 3600,
-        "cogidtk" => "eyJraWQiOiJMTFJLeGk5NExrZDFVaU1sTHdLN241WWNPUDd4ZWt4bzlqd2JzNFgwSnI4PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI4MjU2ZjYyZC04MWM1LTQzNGEtOWM2Yy03NDJhMDUyZWZlZmQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tXC91cy1lYXN0LTFfdHl6Z0FjbUJGIiwiY29nbml0bzp1c2VybmFtZSI6IjgyNTZmNjJkLTgxYzUtNDM0YS05YzZjLTc0MmEwNTJlZmVmZCIsIm9yaWdpbl9qdGkiOiI1MDRkYjQ2Yi0xZjE4LTQzOTYtOGQxYy05MDg4YjBhYWZkMDQiLCJhdWQiOiIxbzZ2NWIzM2o4NzdoY2JiamQxb25iMnNpcSIsImV2ZW50X2lkIjoiNDBjYzY3ZDMtMjJkMS00NjA4LWFmMmItZTQzMWJjMjg4MTA2IiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2OTMzMDc4NDEsIm5hbWUiOiJzdXJ5YSIsImV4cCI6MTY5MzMxMTQ0MSwiaWF0IjoxNjkzMzA3ODQxLCJqdGkiOiIwYjMzMTM0Ny1kYzdkLTQ4MDQtYTBmNS1lNjk2NGMyYjE2NTIiLCJlbWFpbCI6InNiYWxha3Jpc2huYW5Ab3B0aW1pemVpdC5haSJ9.gMTFtXWJ3mTfkdEU9rF0P3eEfd7CtOBnQoORWO0d4ItK5TmH_uzI00CKGoGlj-YaJspNjFTNALLiKgiA6atWTJV-Vx3_xua4ZtzRzoX1y7jQPraQJHjfI5omAaAJ_6l_Iji9SN2tmSF1gB-4N4oU0ScCEkzsU3X8Z9ZlgJ-bUMDV4EjMfO1-F2K9KqM8f5HhxgOCOq5N5B5CO7G9F1DXUdV-T8WX45_FBVJOBOxZER7bhiSmSVeKtJVqikp2RJA_Ja141yi8I4UCvDUcMsyYDazWVVvfSzbX7HeV2eX1Tp0ZMdbjF2D_w9w-ZV-Un929khdRUIxvb0JNrRb26eZu6w",
-        "optimizeit" => "eyJraWQiOiJBdEFcL2xaRVpPWDZpSmwyUCtsY0RWejl6RkZoK3FPZ3NvQkxKNSswcm15Yz0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4MjU2ZjYyZC04MWM1LTQzNGEtOWM2Yy03NDJhMDUyZWZlZmQiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV90eXpnQWNtQkYiLCJjbGllbnRfaWQiOiIxbzZ2NWIzM2o4NzdoY2JiamQxb25iMnNpcSIsIm9yaWdpbl9qdGkiOiI1MDRkYjQ2Yi0xZjE4LTQzOTYtOGQxYy05MDg4YjBhYWZkMDQiLCJldmVudF9pZCI6IjQwY2M2N2QzLTIyZDEtNDYwOC1hZjJiLWU0MzFiYzI4ODEwNiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2OTMzMDc4NDEsImV4cCI6MTY5MzMxMTQ0MSwiaWF0IjoxNjkzMzA3ODQxLCJqdGkiOiI3YjE4MTcxNS0wYmU2LTRlYzAtYjFmNy1lMDZiNmFhM2E4NzciLCJ1c2VybmFtZSI6IjgyNTZmNjJkLTgxYzUtNDM0YS05YzZjLTc0MmEwNTJlZmVmZCJ9.wL2r0nRHZYmSJmo3BFcdVCaWTtxMgVFvTQvT3qZiHJtk51xTxXIOFQAgcigN2pb1TvmafwX27DXUWtimoBMVBz6vo82w6vZHrIpz3ljBVvq-VilJgam_Edurt24g6b23NKFiPc3e0bVQK5p5lMQTKkEORIe8_LTskgSUvw3v-fc8gy_zA7fjKqEe5yUfVO7W8y8eMF5rvwn_fVPB-SotwtIqtw0BauuUJKywwYZCXc5qByQUDN9zpuZbR4QmlxrX0ccwofls2kkqdCN_Nv2t9f24F2C3oWTLWzFVlj7fTab5Zo5h-4QHpT7uokUZ97UBLfpnozxAOizPdaHcJpDZdg",
-        "user_id" => "8256f62d-81c5-434a-9c6c-742a052efefd",
-        "user_organization" => "optimizeit",
-        "user_email" => "sbalakrishnan@optimizeit.ai",
-        "onboard_date" => "2023-04-13",
-        "account_id" => "2eJICUv8",
-        "user_status" => "CONFIRMED",
-        "user_name" => "surya",
-    ];
-    foreach($array as $k => $v){
-        session()->put($k,$v);
-    }
-    return redirect('/');
-});
+
+
 

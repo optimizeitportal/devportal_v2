@@ -7,10 +7,31 @@
         type="text/css" />
     <link href="{{ asset('build/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet"
         type="text/css" />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
     <!-- Responsive datatable examples -->
     <link href="{{ asset('build/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}"
         rel="stylesheet" type="text/css" />
+    <style>
+        select.form-control{
+            appearance: auto;
+        }
+        .form-check.pa-r{
+            position: absolute;
+            right: -1px;
+            top: 0px;
+            margin: 0;
+        }
+        .token-sale-box {
+            position: relative;
+        }
+        span.token-sale-title {
+            width: 85%;
+            padding: 2px 4px;
+        }
+        [contenteditable]:focus-visible {
+            color: #fff;
+        }
+    </style>
 @endsection
 @section('content')
 
@@ -320,6 +341,7 @@
 <script type="text/javascript" src="{{ asset('assets/js/canvas-zoom.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/simplePagination.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/chatbot.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     var uploadDoc = form_click = table_click = report_click = form_submit = table_submit = true;
     var upload_fileName;
@@ -608,11 +630,11 @@
                     });
 
                     $("#select2").change(function() {
-                        $('.token-sale-box').css('background', '#e2e2e2');
+                        $('.token-sale-box').css('border', '2px solid #0000');
                         let tigger_id = $(this).find(':selected').attr('data-trigger-id');
                         $(tigger_id).trigger('click');
 
-                        $(tigger_id).parents('.token-sale-box,td').css('background', '#c8e4ff');
+                        $(tigger_id).parents('.token-sale-box,td').css('border', '2px solid var(--opt-primary)');
 
                         $('.token-box-top,' + tigger_id).animate({
                             scrollTop: $(tigger_id).offset().top - 350
@@ -634,6 +656,9 @@
 
 
                 }
+                $('.BoundingBoxLabel').click(function(){
+                    BoundingBox($(this))
+                })
                 $('.BoundingBoxInput ,span.raw_text_val').click(function() {
                     $('span.raw_text_val').removeClass('active');
                     if ($(this).hasClass('raw_text_val')) {
@@ -643,10 +668,10 @@
                 });
                 if (thisData.attr('id') == "formTab" || thisData.attr('id') == 'tableTab') {
                     $('.BoundingBoxInput').focus(function() {
-                        $('.token-sale-box').css('background', '#e2e2e2');
-                        $(this).parents('.token-sale-box,td').css('background', '#c8e4ff')
+                        $('.token-sale-box').css('border', '2px solid #0000');
+                        $(this).parents('.token-sale-box,td').css('border', '2px solid var(--opt-primary)')
                     }).focusout(function() {
-                        $(this).parents('.token-sale-box,td').css('background', '#e2e2e2')
+                        $(this).parents('.token-sale-box,td').css('border', '2px solid #0000')
                     })
                     let page_count = $('ul#table_pagination li').length;
 
@@ -920,6 +945,11 @@
                 $('select[name="pageno"]').html("<option value='0'>0</option>");
             }
         })
+     
+        // $('.token-sale-title').click( function() {
+        //         $(this).attr()
+        // });
+    
 
         // Comming Form the Dashborad Page For Sample Document
         @if (isset($_GET['sample_file']))
