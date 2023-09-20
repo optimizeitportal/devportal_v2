@@ -4,10 +4,10 @@
 
 @section('content')
 
-@component('components.breadcrumb')
+{{-- @component('components.breadcrumb')
 @slot('li_1') Dashboard @endslot
 @slot('title') Dashboard @endslot
-@endcomponent
+@endcomponent --}}
 
 {{-- <div class="row">
     <div class="col-lg-12">
@@ -250,48 +250,18 @@
     <div class="col-xl-4">
         <div class="card h-100">
             <div class="card-body">
-                <div class="float-end">
-                    <select class="form-select form-select-sm ms-2">
-                        <option value="MA" selected="">March</option>
-                        <option value="FE">February</option>
-                        <option value="JA">January</option>
-                        <option value="DE">December</option>
-                    </select>
-                </div>
-                <h4 class="card-title mb-4">Pages analyzed</h4>
+                <h4 class="card-title mb-4">Types of Documents</h4>
 
-                <div> 
-                    <div id="donut-chart" data-colors='["--bs-primary", "--bs-success", "--bs-danger"]' class="apex-charts"></div>
-                </div>
-
-                <div class="text-center text-muted">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="mt-4">
-                                <p class="mb-2 text-truncate"><i class="mdi mdi-circle text-primary me-1"></i> 1 Pages</p>
-                                <h5>300</h5>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="mt-4">
-                                <p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> 5 pages</p>
-                                <h5>100</h5>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="mt-4">
-                                <p class="mb-2 text-truncate"><i class="mdi mdi-circle text-danger me-1"></i> 10 Pages</p>
-                                <h5>200</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div id="donut-charts"
+                    data-colors='["--bs-info","--bs-warning", "--bs-danger", "--bs-success", "--bs-primary"]'
+                    dir="ltr"></div>
             </div>
         </div>
+       
     </div>
 </div>
 <!-- end row -->
-<div class="row mt-4">
+<div class="row mt-4" style="display: none;">
     <div class="col-md-6">
         <div class="card h-100">
             <div class="card-body">
@@ -342,7 +312,50 @@
     </div>
 </div>
 <!-- end row -->
+<div class="row mt-4" >
+    <div class="col-md-12">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="float-end">
+                    <select class="form-select form-select-sm ms-2">
+                        <option value="MA" selected="">March</option>
+                        <option value="FE">February</option>
+                        <option value="JA">January</option>
+                        <option value="DE">December</option>
+                    </select>
+                </div>
+                <h4 class="card-title mb-4">Pages analyzed</h4>
 
+                <div> 
+                    <div id="donut-chart" data-colors='["--bs-primary", "--bs-success", "--bs-danger"]' class="apex-charts"></div>
+                </div>
+
+                <div class="text-center text-muted">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mt-4">
+                                <p class="mb-2 text-truncate"><i class="mdi mdi-circle text-primary me-1"></i> 1 Pages</p>
+                                <h5>300</h5>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mt-4">
+                                <p class="mb-2 text-truncate"><i class="mdi mdi-circle text-success me-1"></i> 5 pages</p>
+                                <h5>100</h5>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mt-4">
+                                <p class="mb-2 text-truncate"><i class="mdi mdi-circle text-danger me-1"></i> 10 Pages</p>
+                                <h5>200</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="toolbar d-flex flex-wrap gap-2 justify-content-center" style="display: none !important;">
     <button type="button" class="btn btn-light btn-sm active" id="one_month">
         1M
@@ -369,6 +382,13 @@
 <script src="{{ asset('build/js/pages/crypto-dashboard.init.js') }}"></script>
 {{-- <script src="{{ asset('build/js/pages/dashboard-job.init.js') }}"></script> --}}
 <!-- app js -->
+
+<!-- tui charts plugins -->
+<script src="{{ asset('build/libs/tui-chart/tui-chart-all.min.js') }}"></script>
+
+<!-- tui charts map -->
+<script src="{{ asset('build/libs/tui-chart/maps/usa.js') }}"></script>
+
 <script src="{{ asset('build/js/app.js') }}"></script>
 <script>
     var statisticsApplicationColors = getChartColorsArray("chart");
@@ -378,17 +398,20 @@
                 name: 'Packages',
                 type: 'column',
                 data: [30, 48, 28, 74, 39, 87, 54, 36, 50, 87, 84]
-            }, {
-                name: 'Documents',
-                type: 'column',
-                data: [20, 50, 42, 10, 24, 28, 60, 35, 47, 64, 78]
-            }, {
-                name: 'Tables',
-                type: 'area',
-                data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43]
-            }, {
+            }, 
+            // {
+            //     name: 'Documents',
+            //     type: 'column',
+            //     data: [20, 50, 42, 10, 24, 28, 60, 35, 47, 64, 78]
+            // },
+            //  {
+            //     name: 'Tables',
+            //     type: 'area',
+            //     data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43]
+            // }, 
+            {
                 name: 'Pages',
-                type: 'line',
+                type: 'column',
                 data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
             }],
             chart: {
@@ -730,6 +753,106 @@
                 type: 'line',
                 data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
             }]
-        $('')
+       
+</script>
+<script>
+    // Donut pie chart
+
+var donutPieChartColors = getChartColorsArray("donut-charts");
+if (donutPieChartColors) {
+    var donutpieChartWidth = $("#donut-charts").width();
+    var container = document.getElementById('donut-charts');
+    var data1 = {
+        categories: ['Documents'],
+        series: [
+            {
+                name: 'PDF',
+                data: 46.02
+            },
+            {
+                name: 'PNG',
+                data: 20.47
+            },
+            {
+                name: 'JPEG',
+                data: 17.71
+            },
+            {
+                name: 'TIFF',
+                data: 5.45
+            },
+            {
+                name: 'JPG',
+                data: 10.35
+            }
+        ]
+    };
+    var options = {
+        chart: {
+            width: donutpieChartWidth,
+            height: 380,
+            title: 'Analyzed Types of Documents',
+            format: function(value, chartType, areaType, valuetype, legendName) {
+                if (areaType === 'makingSeriesLabel') { // formatting at series area
+                    value = value + '%';
+                }
+
+                return value;
+            }
+        },
+        series: {
+            radiusRange: ['40%', '100%'],
+            showLabel: true
+        },
+        tooltip: {
+            suffix: '%'
+        },
+        legend: {
+            align: 'bottom'
+        }
+    };
+    var theme = {
+        chart: {
+            background: {
+                color: '#fff',
+                opacity: 0
+            },
+        },
+        title: {
+            color: '#fff',
+        },
+
+        plot: {
+            lineColor: 'rgba(166, 176, 207, 0.1)'
+        },
+        legend: {
+            label: {
+                color: '#fff'
+            }
+        },
+        series: {
+            colors: donutPieChartColors,
+            label: {
+                color: '#fff',
+                fontFamily: 'sans-serif'
+            }
+        }
+    };
+
+    // For apply theme
+
+    tui.chart.registerTheme('myTheme', theme);
+    options.theme = 'myTheme';
+
+    var donutChart = tui.chart.pieChart(container, data1, options);
+}
+
+$( window ).resize(function() {
+    donutpieChartWidth = $("#donut-charts").width();
+    donutChart.resize({
+        width: donutpieChartWidth,
+        height: 350
+    });
+});
 </script>
 @endsection

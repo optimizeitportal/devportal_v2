@@ -31,21 +31,21 @@
                 <li>
                     <a href="javascript:void(0)" class="waves-effect">
                         <i class='bx bxs-bar-chart-alt-2' ></i>
-                        <span key="t-dashboard">Analytics</span>
+                        <span key="t-dashboard">Data Analytics</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{url('d-board')}}" class="waves-effect">
                         <i class="bx bx-file"></i>
-                        <span key="t-dashboard">D-Board</span>
+                        <span key="t-dashboard">Data Extraction</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{url('doc_verify')}}" class="waves-effect">
                         <i class="bx bx-file"></i>
                         <span key="t-doc_verify">D-Verify</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="javascript:void(0)" class="waves-effect">
                         <i class='bx bx-conversation' ></i>

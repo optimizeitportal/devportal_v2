@@ -9,7 +9,7 @@ export default vite.defineConfig({
         manifest: true,
         // assetsDir: 'js',
         rtl: true,
-        outDir: 'public/build/',
+        outDir: 'https://dev-digitizer.optimizeit.ai/client_portal_dev_v2/public/build/',
         cssCodeSplit: true,
         rollupOptions: {
             output: {

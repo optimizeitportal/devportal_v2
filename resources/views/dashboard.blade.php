@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title') D-Board @endsection
+@section('title') Data Extraction @endsection
 @section('css')
     <!-- DataTables -->
     <link href="{{ asset('build/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
@@ -15,10 +15,10 @@
 @endsection
 @section('content')
 
-@component('components.breadcrumb')
+{{-- @component('components.breadcrumb')
 @slot('li_1') D-Board @endslot
 @slot('title') D-Board @endslot
-@endcomponent
+@endcomponent --}}
 
 <div class="row">
 
@@ -132,7 +132,7 @@
         <div class="card">
             <div class="card-body list_result">
                 <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
-                    <thead>
+                    <thead class="table-light">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Documents</th>
